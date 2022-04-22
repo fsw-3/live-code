@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books List</title>
+</head>
+
+<body>
+    <h1>Books List</h1>
+    <%- include('partials/header') %>
+        <br>
+        <table border="1">
+            <thead>
+                <th>ID</th>
+                <th>Title</th>
+                <th>ISBN</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Action</th>
+            </thead>
+            <% books.forEach(function(book){ %>
+                <tr>
+                    <td>
+                        <%= book.id %>
+                    </td>
+                    <td>
+                        <%= book.title %>
+                    </td>
+                    <td>
+                        <%= book.isbn %>
+                    </td>
+                    <td>
+                        <%= book.price %>
+                    </td>
+                    <td>
+                        <%= book.stock %>
+                    </td>
+                    <td>
+                        <a href="books/restock/<%= book.id %>">Restock</a> | 
+                        <a href="books/delete/<%= book.id %>">Delete</a>
+                    </td>
+                </tr <% }) %>
+        </table>
+        <br>
+        <a href="/books/add">Add Books</a>
+</body>
+
+</html>

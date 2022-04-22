@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restockist</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <h1>Restock Books</h1>
+        <form action="/books/restock/<%= book.id %>" method="POST">
+            <table>
+                <tr>
+                    <th><label for="title">Title</label></th>
+                    <td><%= book.title %></td>
+                </tr>
+                <tr>
+                    <th><label for="isbn">ISBN</label></th>
+                    <td><%= book.isbn %></td>
+                </tr>
+                <tr>
+                    <th><label for="price">Price</label></th>
+                    <td><input type="number" name="price" id="price" placeholder="250000" value="<%= book.price %>"></td>
+                </tr>
+                <tr>
+                    <th><label for="stock">Stock</label></th>
+                    <td><input type="number" name="stock" id="stock" placeholder="5" value="<%= book.stock %>"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Add Book"></td>
+                </tr>
+            </table>
+        </form>
+</body>
+
+</html>

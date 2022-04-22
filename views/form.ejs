@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Books</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+        <h1>Add New Books</h1>
+        <form action="/books/add" method="POST">
+            <table>
+                <tr>
+                    <th><label for="title">Title</label></th>
+                    <td><input type="text" name="title" id="title" placeholder="Harry Potter and The Sorcerer's Stone"></td>
+                </tr>
+                <tr>
+                    <th><label for="isbn">ISBN</label></th>
+                    <td><input type="text" name="isbn" id="isbn" placeholder="978-602-8519-93-9"></td>
+                </tr>
+                <tr>
+                    <th><label for="price">Price</label></th>
+                    <td><input type="number" name="price" id="price" placeholder="250000"></td>
+                </tr>
+                <tr>
+                    <th><label for="stock">Stock</label></th>
+                    <td><input type="number" name="stock" id="stock" placeholder="5"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="submit" value="Add Book"></td>
+                </tr>
+            </table>
+        </form>
+</body>
+
+</html>
