@@ -53,6 +53,11 @@ router.get("/books/restock/:id", async (req, res) => {
   res.render("restock", data);
 });
 
+router.post("/books/restock/:id", async (req, res) => {
+  await axios.post(`http://localhost:5000/books/restock/${req.params.id}`, req.body);
+  res.redirect("/books/emptyList");
+});
+
 router.post("/books/add", async (req, res) => {
   const { title, isbn } = req.body;
   const newTitle = title.toLowerCase().replace(" ", "_");

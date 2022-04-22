@@ -1,4 +1,5 @@
-<form action="" method="post">
+<form action="/books/restock/<%= book.id %>" method="post">
   <label class="form-label">Stock</label>
-  <input type="text" class="form-control" value="<%= book.stock %> " required />
+  <input type="text" name="stock" class="form-control" value="<%= book.stock %>" required />
+  <input type="submit" class="btn btn-primary" value="Submit" />
 </form>
