@@ -1,0 +1,27 @@
+<a href="/books/add" class="btn btn-primary">Add book</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">No</th>
+      <th scope="col">Title</th>
+      <th scope="col">ISBN</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Price</th>
+      <th scope="col">Author</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% let no=1; %> <% books.forEach(book=>{ %>
+    <tr>
+      <td><%= no %></td>
+      <td><%= book.title %></td>
+      <td><%= book.isbn %></td>
+      <td><%= book.stock %></td>
+      <td><%= book.price %></td>
+      <td><%= book.Author.name %></td>
+      <td><a href="/books/buy/<%= book.id %> " class="btn btn-primary badge">Buy</a></td>
+    </tr>
+    <% no++ %> <% }) %>
+  </tbody>
+</table>
