@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BookStore</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Title</th>
+          <th>ISBN</th>
+          <th>Stock</th>
+          <th>Price</th>
+          <th>Author</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% books.forEach((book,i) => { %>
+        <tr>
+          <td><%= (i+1) %></td>
+          <td><%= book.title %></td>
+          <td><%= book.isbn %></td>
+          <td><%= book.stock %></td>
+          <td><%= book.price %></td>
+          <td><%= book.Author.name %></td>
+          <td><a href="/books/buy/<%= book.id %>">Buy</a></td>
+        </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  </body>
+</html>
