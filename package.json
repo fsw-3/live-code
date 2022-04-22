@@ -1,0 +1,27 @@
+{
+  "dependencies": {
+    "ejs": "^3.1.7",
+    "express": "^4.17.3",
+    "pg": "^8.7.3",
+    "sequelize": "^6.19.0"
+  },
+  "name": "live-code",
+  "description": "⏰ Duration: ~120 minutes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsw-3/live-code.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsw-3/live-code/issues"
+  },
+  "homepage": "https://github.com/fsw-3/live-code#readme"
+}
