@@ -3,6 +3,6 @@ import { title, isbn, price, stock } from "../controller/book";
 
 const router = express.Router()
 
-router.get('/books', index)
+router.get('/books', book)
 
 export default router;
