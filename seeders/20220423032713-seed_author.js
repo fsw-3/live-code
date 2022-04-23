@@ -16,22 +16,30 @@ module.exports = {
       {
         name : 'J.K. Rowling',
         age : 50,
-        gender: 'Female'
+        gender: 'Female',
+        created_at: new Date(),
+        updated_at: new Date()
       },
       {
         name : 'George R. R. Martin',
         age : 71,
-        gender: 'Male'
+        gender: 'Male',
+        created_at: new Date(),
+        updated_at: new Date()
       },
       {
         name : 'Suzanne Collins',
         age : 57,
-        gender: 'Female'
+        gender: 'Female',
+        created_at: new Date(),
+        updated_at: new Date()
       },
       {
         name : 'James Dashner',
         age : 47,
-        gender: 'Male'
+        gender: 'Male',
+        created_at: new Date(),
+        updated_at: new Date()
       }
     ]);
   },

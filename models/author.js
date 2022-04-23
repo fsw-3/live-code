@@ -19,8 +19,12 @@ module.exports = (sequelize, DataTypes) => {
   Author.init({
     name: DataTypes.STRING,
     age: DataTypes.NUMBER,
-    gender: DataTypes.STRING
+    gender: DataTypes.STRING,
+    created_at: DataTypes.DATE,
+    updated_at: DataTypes.DATE
   }, {
+    createdAt: 'created_at',
+    updatedAt: 'udpated_at',
     sequelize,
     modelName: 'Author',
   });
