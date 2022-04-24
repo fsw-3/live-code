@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const booksRoute = require('./books.route');
-const authorsRoute = require('./authors.route');
+const booksRoute = require('./books_route');
+const authorsRoute = require('./authors_route');
 
 //books
 router.use('/books', booksRoute);
