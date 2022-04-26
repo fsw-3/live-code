@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
     updated_at: DataTypes.DATE
   }, {
     createdAt: 'created_at',
-    updatedAt: 'udpated_at',
+    updatedAt: 'updated_at',
     sequelize,
     modelName: 'Book',
   });
