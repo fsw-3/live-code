@@ -7,14 +7,15 @@ const apiRouter = express.Router();
  * TODO: Implement your own API
  *       implementations
  */
-apiRouter.get("/api/v1/posts", controllers.api.v1.postController.list);
-apiRouter.post("/api/v1/posts", controllers.api.v1.postController.create);
-apiRouter.put("/api/v1/posts/:id", controllers.api.v1.postController.update);
-apiRouter.get("/api/v1/posts/:id", controllers.api.v1.postController.show);
-apiRouter.delete(
-  "/api/v1/posts/:id",
-  controllers.api.v1.postController.destroy
-);
+apiRouter.get("/authors", controllers.api.v1.authorController.showAuthors);
+// apiRouter.get("/books", controllers.api.v1.showBooks);
+// apiRouter.get("/books/buy/:id", controllers.api.v1.buyBook);
+// apiRouter.get("/books/add", controllers.api.v1.formBook);
+// apiRouter.post("/books/add", controllers.api.v1.addBook);
+// apiRouter.get("/books/emptyList", controllers.api.v1.emptyList);
+// apiRouter.get("/books/restock/:id", controllers.api.v1.formRestock);
+// apiRouter.post("/books/restock:id", controllers.api.v1.restock);
+// apiRouter.get("/books/delete:id", controllers.api.v1.deleteBook);
 
 /**
  * TODO: Delete this, this is just a demonstration of
