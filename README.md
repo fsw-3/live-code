@@ -4,7 +4,7 @@
 
 Buatlah sebuah website bertema bookstore.
 
-## Release 0
+## Release 0 [done]
 
 Buatlah model untuk :
 
@@ -18,12 +18,12 @@ Buatlah model untuk :
   - price: number
   - stock: number
 
-## Release 1
+## Release 1 [done]
 
 Relasi antara `Author` dengan `Book` adalah satu `Author` dapat menulis banyak `Book`, dan satu `Book` hanya bisa ditulis oleh satu `Author`.  
 Buatlah migration untuk memenuhi requirements tersebut.
 
-## Release 2
+## Release 2 [done]
 
 Buatlah seeding untuk menginput `Author`. Datanya adalah:
 
@@ -40,15 +40,15 @@ Buatlah routing berdasarkan tabel berikut :
 
 | Method | Route              | Description                                                                      |
 | :----- | :---------         | :------------------------------------------------------------------------------- |
-| GET    | /authors           | Menampilkan seluruh author yang ada di database                                  |
+| GET  V  | /authors           | Menampilkan seluruh author yang ada di database                                  |
 | GET    | /books             | Menampilkan seluruh buku yang ada di database yang memiliki stock lebih dari 0   |
-| GET    | /books/buy/:id     | Membeli buku dari bookstore dan mengurangi stock dari buku                       |
-| GET    | /books/add         | Menampilkan form untuk menambahkan buku                                          |
-| POST   | /books/add         | Menambahkan data buku ke database                                                |
-| GET    | /books/emptyList   | Menampilkan seluruh buku yang ada di database yang memiliki stock 0              |
+| GET   V | /books/buy/:id     | Membeli buku dari bookstore dan mengurangi stock dari buku                       |
+| GET   V | /books/add         | Menampilkan form untuk menambahkan buku                                          |
+| POST V  | /books/add         | Menambahkan data buku ke database                                                |
+| GET   V | /books/emptyList   | Menampilkan seluruh buku yang ada di database yang memiliki stock 0              |
 | GET    | /books/restock/:id | Menampilkan form untuk merestock buku                                            |
-| POST   | /books/restock/:id | Mengupdate jumlah stock buku berdasarkan form restock buku                       |
-| GET    | /books/delete/:id  | Menghapus buku dari database                                                     |
+| POST  V | /books/restock/:id | Mengupdate jumlah stock buku berdasarkan form restock buku                       |
+| GET   V | /books/delete/:id  | Menghapus buku dari database                                                     |
 
 ## Release 4
 
@@ -79,7 +79,7 @@ Tabel harus memiliki kolom sebagai berikut:
 Di kolom action, tambahkan button yang mengarahkan ke route `/books/buy/:id` dimana ketika di klik, stock dari buku akan berkurang 1. Setelah proses pengurangan selesai, langsung bawa user ke halaman `/books`.  
 Lalu tambahkan juga button atau anchor yang mengarah ke route `GET /books/add` untuk menampilkan form guna menambahkan buku ke database.
 
-## Release 6
+## Release 6 [done]
 
 Untuk route `GET /books/add` buatlah form untuk menambahkan buku ke database.  
 Input yang harus dimiliki di form tersebut adalah sebagai berikut:
@@ -94,7 +94,6 @@ Untuk input author, harus berupa select option yang pilihannya adalah list autho
 Tambahkan button submit yang akan mengirim data ke route `POST /books/add`.
 
 ## Release 7
-
 > Ketika terjadi _error_, boleh menggunakan `res.send` untuk mengirim _error_ nya.
 > yang penting _error message_ nya deskriptif.
 
@@ -114,7 +113,7 @@ Khusus untuk stock dan price, pastikan input yang dimasukan lebih dari 0.
 Buatlah _custom message_ untuk setiap validasi agar pesan _error_ lebih mudah dipahami dan lebih deskriptif.  
 Setelah data berhasil ditambahkan ke database, arahkan user ke halaman `/books`.
 
-## Release 8
+## Release 8 [done]
 
 Untuk route `GET /books/emptyList` tampilkan data seluruh buku yang memiliki stock 0.  
 Tabel harus memiliki kolom sebagai berikut:

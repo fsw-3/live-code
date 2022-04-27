@@ -1,0 +1,44 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('partials/header') %>
+        <form method="put" action="/books/restock/<%= book.id %>">
+            <h1>Add Book Data</h1>
+            <a href="/books">Show All Data</a><br><br>
+
+            <label for="title">Title :</label><br>
+            <input type="text" name="title"><br>
+
+            <label for="isbn">ISBN :</label><br>
+            <input type="text" name="isbn"><br>
+
+            <label for="price">Price :</label><br>
+            <input type="number" name="price"><br>
+
+            <label for="stock">Stock :</label><br>
+            <input type="number" name="stock"><br>
+
+            <label for="author_id">Author_id :</label><br>
+            <select name="author_id" id="author_id">
+                <option value="1">J. K. Rowling</option>
+                <option value="2">George R. R. Martin</option>
+                <option value="3">Suzanne Collins</option>
+                <option value="4">James Dashner</option>
+            </select><br><br>
+            <div class="d-flex align-items-end" style="margin-top: 205px; padding-bottom: 8px;">
+                <button type="" class="btn btn-cancel">Cancel</button>
+                <button type="submit" class="btn btn-save">Save</button>
+            </div>
+        </form>
+
+    <%- include('partials/footer') %>
+</body>
+
+</html>
