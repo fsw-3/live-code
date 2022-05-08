@@ -23,12 +23,22 @@
                     <td><input type="text" name="isbn" id="isbn" placeholder="978-602-8519-93-9"></td>
                 </tr>
                 <tr>
+                    <th><label for="stock">Stock</label></th>
+                    <td><input type="number" name="stock" id="stock" placeholder="5"></td>
+                </tr>
+                <tr>
                     <th><label for="price">Price</label></th>
                     <td><input type="number" name="price" id="price" placeholder="250000"></td>
                 </tr>
                 <tr>
-                    <th><label for="stock">Stock</label></th>
-                    <td><input type="number" name="stock" id="stock" placeholder="5"></td>
+                    <th><label for="author">Author</label></th>
+                    <td>
+                        <select name="author_id" id="author_id">
+                            <% authors.forEach(author => { %>
+                                <option value="<%= author.id %>"><%= author.name %></option>
+                            <% }) %>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td colspan="2"><input type="submit" value="Add Book"></td>

@@ -18,7 +18,6 @@
                 <th>Title</th>
                 <th>ISBN</th>
                 <th>Price</th>
-                <th>Stock</th>
                 <th>Author</th>
                 <th>Action</th>
             </thead>
@@ -28,10 +27,8 @@
                     <td><%- book.title %></td>
                     <td><%- book.isbn %></td>
                     <td><%- book.price %></td>
-                    <td><%- book.stock %></td>
                     <td><%- book.Author.name %></td>
                     <td>
-                        <a href="/books/buy/<%= book.id %>">Buy</a> | 
                         <a href="/books/restock/<%= book.id %>">Restock</a> | 
                         <a href="/books/delete/<%= book.id %>">Delete</a>
                     </td>

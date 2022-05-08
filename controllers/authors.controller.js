@@ -10,6 +10,16 @@ class Controller {
                 res.send(err);
             });
     }
+
+    static add(req, res) {
+        Author.create(req.body)
+            .then(() => {
+                res.redirect('/authors');
+            })
+            .catch(err => {
+                res.send(err);
+            });
+    }
 }
 
 module.exports = Controller;

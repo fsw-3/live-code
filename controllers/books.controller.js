@@ -2,9 +2,7 @@ const { Book, Author } = require('../models/index');
 
 class Controller {
     static getAll(req, res) {
-        Book.findAll({
-            include: Author
-        })
+        Book.findAll({ include: Author })
             .then(books => {
                 res.render('books', { books });
             })
@@ -23,8 +21,35 @@ class Controller {
             });
     }
 
+    static getById(req, res) {
+        Book.findByPk(req.params.id)
+            .then(book => {
+                res.status(200).json(book);
+            })
+            .catch(err => {
+                res.send(err);
+            })
+    }
+
+    static buy(req, res) {
+        Book.findByPk(req.params.id)
+            .then(book => {
+                if (book.stock > 0) {
+                    const updateStock = book.stock - 1;
+                    book.update({
+                        stock: updateStock,
+                        updatedAt: new Date()
+                    })
+                }
+                res.redirect('/books');
+            })
+            .catch(err => {
+                res.send(err);
+            })
+    }
+
     static formRestock(req, res) {
-        Book.findbyPk(req.params.id)
+        Book.findByPk(req.params.id, { include: Author })
             .then(book => {
                 res.render('formRestock', { book });
             })
@@ -39,7 +64,7 @@ class Controller {
                 id: req.params.id
             }
         })
-            .then(() => {
+            .then(book => {
                 res.redirect('/books');
             })
             .catch(err => {
@@ -55,6 +80,21 @@ class Controller {
         })
             .then(() => {
                 res.redirect('/books');
+            })
+            .catch(err => {
+                res.send(err);
+            });
+    }
+
+    static getEmptyList(req, res) {
+        Book.findAll({
+            where: {
+                stock: 0
+            },
+            include: Author
+        })
+            .then(books => {
+                res.render('emptyList', { books });
             })
             .catch(err => {
                 res.send(err);

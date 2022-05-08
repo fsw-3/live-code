@@ -7,4 +7,12 @@ router.get('/', (req, res) => {
     Controller.getAll(req, res);
 });
 
+router.get('/add', (req, res) => {
+    res.render('formAuthors');
+});
+
+router.post('/add', (req, res) => {
+    Controller.add(req, res);
+});
+
 module.exports = router;
