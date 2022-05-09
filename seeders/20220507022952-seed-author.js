@@ -11,7 +11,7 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-   await queryInterface.bulkInsert('Authors', [{
+     await queryInterface.bulkInsert('Authors', [{
       name: 'J. K. Rowling',
       age: 54,
       gender: 'Female',
@@ -45,6 +45,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    await queryInterface.bulkDelete('Authors', null, {});
+     await queryInterface.bulkDelete('Authors', null, {});
   }
 };

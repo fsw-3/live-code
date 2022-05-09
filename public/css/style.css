@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.box-input {
+    width: 439px;
+    height: 37px;
+    margin-left: 100px;
+    padding-left: 8px;
+}
+
+.text-input {
+    font-family: 'Helvetica';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    padding-top: 8px;
+}

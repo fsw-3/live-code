@@ -17,7 +17,7 @@ module.exports = {
       price: {
         type: Sequelize.INTEGER
       },
-      stok: {
+      stock: {
         type: Sequelize.INTEGER
       },
       createdAt: {
