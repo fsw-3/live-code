@@ -18,6 +18,13 @@ class Controller {
     }
 
     static add(req, res) {
+        // Hook for formatting ISBN
+        Book.addHook('beforeCreate', (book) => {
+            // lowercase title and replace spaces with underscore
+            let titleFormat = book.title.toLowerCase().replace(/ /g, '_');
+            // concat formatted title with ISBN
+            book.isbn = titleFormat + book.isbn;
+        });
         Book.create(req.body)
             .then(() => {
                 res.redirect('/books');
