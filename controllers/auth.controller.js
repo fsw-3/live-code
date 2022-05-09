@@ -3,6 +3,8 @@ const jwt = require("jsonwebtoken");
 const { User } = require("../models");
 const SALT = 10;
 
+require('dotenv').config();
+
 function encryptPassword(password) {
     return new Promise((resolve, reject) => {
         bcrypt.hash(password, SALT, (err, encryptedPassword) => {
@@ -34,27 +36,6 @@ function createToken(payload) {
 }
 
 module.exports = {
-    async whoAmI(req, res) {
-        res.status(200).json(req.user);
-    },
-    
-    async authorize(req, res, next) {
-        try {
-            const bearerToken = req.headers.authorization;
-            const token = bearerToken.split("Bearer ")[1];
-            const tokenPayload = jwt.verify(token, process.env.JWT_SIGNATURE_KEY || "Secret");
-    
-            req.user = await User.findByPk(tokenPayload.id);
-            next();
-        }
-    
-        catch (error) {
-            res.status(401).json({
-                message: "Unauthorized",
-            })
-        }
-    },
-
     async register(req, res) {
         const username = req.body.username;
         const encryptedPassword = await encryptPassword(req.body.password);
@@ -106,4 +87,24 @@ module.exports = {
             updatedAt: user.updatedAt,
         });
     },
+
+    async whoAmI(req, res) {
+        res.status(200).json(req.user);
+    },
+    
+    async authorize(req, res, next) {
+        try {
+            const bearerToken = req.headers.authorization;
+            const token = bearerToken.split("Bearer ")[1];
+            const tokenPayload = jwt.verify(token, process.env.JWT_SIGNATURE_KEY || "Secret");
+    
+            req.user = await User.findByPk(tokenPayload.id);
+            next();
+        }
+        catch (error) {
+            res.status(401).json({
+                message: "Unauthorized",
+            })
+        }
+    }
 };

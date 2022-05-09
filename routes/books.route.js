@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
     Controller.getAll(req, res);
 });
 
+router.get('/emptyList', (req, res) => {
+    Controller.getEmptyList(req, res);
+});
+
 router.get('/buy/:id', (req, res) => {
     Controller.buy(req, res);
 });
@@ -43,10 +47,6 @@ router.post('/restock/:id', (req, res) => {
 
 router.get('/delete/:id', (req, res) => {
     Controller.delete(req, res);
-});
-
-router.get('/emptyList', (req, res) => {
-    Controller.getEmptyList(req, res);
 });
 
 module.exports = router;

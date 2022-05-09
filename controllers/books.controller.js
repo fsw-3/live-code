@@ -1,8 +1,14 @@
+const { Op } = require('sequelize');
 const { Book, Author } = require('../models/index');
 
 class Controller {
     static getAll(req, res) {
-        Book.findAll({ include: Author })
+        Book.findAll({
+            where: {
+                stock: { [Op.gt]: 0 }
+            },
+            include: Author
+        })
             .then(books => {
                 res.render('books', { books });
             })
@@ -87,11 +93,11 @@ class Controller {
     }
 
     static getEmptyList(req, res) {
-        Book.findAll({
+        Book.findAll({ 
             where: {
                 stock: 0
             },
-            include: Author
+            include: Author 
         })
             .then(books => {
                 res.render('emptyList', { books });

@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books List</title>
+    <title>Out Of Stock Books</title>
 </head>
 
 <body>
-    <h1>Books List</h1>
+    <h1>Out Of Stock Books List</h1>
     <%- include('partials/header') %>
         <br>
         <table border="1">
@@ -32,10 +32,10 @@
                         <a href="/books/restock/<%= book.id %>">Restock</a> | 
                         <a href="/books/delete/<%= book.id %>">Delete</a>
                     </td>
-                </tr <% }) %>
+                </tr>
+            <% }) %>
         </table>
         <br>
-        <a href="/books/add">Add Books</a>
 </body>
 
 </html>
