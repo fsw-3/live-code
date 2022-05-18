@@ -20,6 +20,12 @@ module.exports = {
       stock: {
         type: Sequelize.INTEGER
       },
+      authorId: {
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'Authors',
+          key: 'id'
+      }},
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
